@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+    <title>Rakt Setu</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="icon" type="image/jpg" href="{% static 'images/logo.jpeg' %}" />
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+      <style>
+        * {
+  font-family: Nunito, sans-serif;
+}
+
+.text-blk {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  line-height: 25px;
+}
+
+.responsive-container-block {
+  min-height: 75px;
+  height: fit-content;
+  width: 100%;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.responsive-container-block.bigContainer {
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  background-image: url("https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb29.png");
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: cover;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: initial;
+   background-repeat-x: no-repeat;
+  background-repeat-y: no-repeat;}
+
+
+.responsive-container-block.Container {
+  max-width: 800px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  margin-top: 150px;
+  margin-right: auto;
+  margin-bottom: 150px;
+  margin-left: auto;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.text-blk.heading {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+.text-blk.subHeading {
+  text-align: center;
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 60px;
+  margin-left: 0px;
+}
+
+.socialIcon {
+  width: 33px;
+  height: 33px;
+}
+
+.social-icons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.social-icon {
+  margin: 0 50px 0 50px;
+}
+
+.social-icon:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .text-blk.heading {
+    font-size: 55px;
+    line-height: 65px;
+  }
+
+  .text-blk.subHeading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .text-blk.subHeading {
+    line-height: 27px;
+  }
+
+  .text-blk.heading {
+    font-size: 32px;
+    line-height: 40px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .social-icon {
+    margin: 0 25px 0 25px;
+  }
+}
+
+@media (max-width: 500px) {
+  .responsive-container-block.bigContainer {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+
+  .text-blk.heading {
+    font-size: 45px;
+    line-height: 55px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .text-blk.subHeading {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+  }
+
+  .social-icons-container {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-blk.subHeading {
+    font-size: 16px;
+    line-height: 23px;
+  }
+
+  .text-blk.heading {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .social-icon {
+    margin: 0 20px 0 20px;
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wk-desk-1 {
+  width: 8.333333%;
+}
+
+.wk-desk-2 {
+  width: 16.666667%;
+}
+
+.wk-desk-3 {
+  width: 25%;
+}
+
+.wk-desk-4 {
+  width: 33.333333%;
+}
+
+.wk-desk-5 {
+  width: 41.666667%;
+}
+
+.wk-desk-6 {
+  width: 50%;
+}
+
+.wk-desk-7 {
+  width: 58.333333%;
+}
+
+.wk-desk-8 {
+  width: 66.666667%;
+}
+
+.wk-desk-9 {
+  width: 75%;
+}
+
+.wk-desk-10 {
+  width: 83.333333%;
+}
+
+.wk-desk-11 {
+  width: 91.666667%;
+}
+
+.wk-desk-12 {
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .wk-ipadp-1 {
+    width: 8.333333%;
+  }
+
+  .wk-ipadp-2 {
+    width: 16.666667%;
+  }
+
+
+
+
+
+  .wk-ipadp-3 {
+    width: 25%;
+  }
+
+  .wk-ipadp-4 {
+    width: 33.333333%;
+  }
+
+  .wk-ipadp-5 {
+    width: 41.666667%;
+  }
+
+  .wk-ipadp-6 {
+    width: 50%;
+  }
+
+  .wk-ipadp-7 {
+    width: 58.333333%;
+  }
+
+  .wk-ipadp-8 {
+    width: 66.666667%;
+  }
+
+  .wk-ipadp-9 {
+    width: 75%;
+  }
+
+  .wk-ipadp-10 {
+    width: 83.333333%;
+  }
+
+  .wk-ipadp-11 {
+    width: 91.666667%;
+  }
+
+  .wk-ipadp-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wk-tab-1 {
+    width: 8.333333%;
+  }
+
+  .wk-tab-2 {
+    width: 16.666667%;
+  }
+
+  .wk-tab-3 {
+    width: 25%;
+  }
+
+  .wk-tab-4 {
+    width: 33.333333%;
+  }
+
+  .wk-tab-5 {
+    width: 41.666667%;
+  }
+
+  .wk-tab-6 {
+    width: 50%;
+  }
+
+  .wk-tab-7 {
+    width: 58.333333%;
+  }
+
+  .wk-tab-8 {
+    width: 66.666667%;
+  }
+
+  .wk-tab-9 {
+    width: 75%;
+  }
+
+  .wk-tab-10 {
+    width: 83.333333%;
+  }
+
+  .wk-tab-11 {
+    width: 91.666667%;
+  }
+
+  .wk-tab-12 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .wk-mobile-1 {
+    width: 8.333333%;
+  }
+
+  .wk-mobile-2 {
+    width: 16.666667%;
+  }
+
+  .wk-mobile-3 {
+    width: 25%;
+  }
+
+  .wk-mobile-4 {
+    width: 33.333333%;
+  }
+
+  .wk-mobile-5 {
+    width: 41.666667%;
+  }
+
+  .wk-mobile-6 {
+    width: 50%;
+  }
+
+  .wk-mobile-7 {
+    width: 58.333333%;
+  }
+
+  .wk-mobile-8 {
+    width: 66.666667%;
+  }
+
+  .wk-mobile-9 {
+    width: 75%;
+  }
+
+  .wk-mobile-10 {
+    width: 83.333333%;
+  }
+
+  .wk-mobile-11 {
+    width: 91.666667%;
+  }
+
+  .wk-mobile-12 {
+    width: 100%;
+  }
+}
+
+
+
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>About Us</title>
+    <style>* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+    }
+    /* Header */
+    header {
+        background-color: white;
+        color: rgb(0, 0, 0);
+        padding: 10px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5px auto;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #40b736;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+    }
+
+    .nav-links a {
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        background-color: orange;
+        border-radius: 4px;
+        color: white;
+    }
+
+    /* About Section */
+    .about {
+        background: rgb(224, 251, 222);
+        background: linear-gradient(360deg, white 100%);
+        padding: 100px 0 20px 0;
+        text-align: center;
+    }
+
+    .about h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about p {
+        font-size: 1rem;
+        color: #323030;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .about-info {
+        margin: 2rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+
+    .about-img {
+        width: 20rem;
+        height: 20rem;
+
+    }
+
+    .about-img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        object-fit: contain;
+    }
+
+    .about-info p {
+        font-size: 1.3rem;
+        margin: 0 2rem;
+        text-align: justify;
+    }
+
+    button {
+        border: none;
+        outline: 0;
+        padding: 10px;
+        margin: 2rem;
+        font-size: 1rem;
+        color: white;
+        background-color: orangered;
+        text-align: center;
+        cursor: pointer;
+        width: 15rem;
+        border-radius: 4px;
+    }
+
+    button:hover {
+        background-color: orangered;
+    }
+
+    /* Team Section */
+    .team {
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    .team h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .team-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        width: 18rem;
+        height: 25rem;
+        margin-top: 10px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-img {
+        width: 15rem;
+        height: 14rem;
+    }
+
+    .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+
+    .card-info button {
+        margin: 1rem 0rem;
+    }
+
+    .card-name {
+        font-size: 2rem;
+        margin: 10px 0;
+    }
+
+    .card-role {
+        font-size: 1rem;
+        color: #888;
+        margin: 5px 0;
+    }
+
+    .card-email {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    @media (max-width: 768px) {
+        nav {
+            display: block;
+        }
+
+        .logo {
+            text-align: center;
+            background: linear-gradient(360deg, white 100%);
+        }
+
+        .nav-links {
+            margin-top: 1rem;
+            justify-content: space-between;
+            background: linear-gradient(360deg, white 100%);
+        }
+
+        .nav-links li {
+            margin-right: 0;
+        }
+
+        .about h1 {
+            font-size: 2rem;
+        }
+
+        .about p {
+            font-size: 0.9rem;
+        }
+
+        .about-info {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-img {
+            width: 60%;
+            height: 60%;
+            margin-bottom: 1rem;
+        }
+
+        .about-info p {
+            margin: 1rem 2rem;
+        }
+
+        .about-info button {
+            margin: 1rem 2rem;
+            width: 10rem;
+        }
+
+        .team {
+            margin: 0 1rem;
+        }
+    }
+    </style>
+</head>
+
+
+<body>
+<div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Rakt</span>Setu</h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="{% url 'BloodProject:index' %}" class="nav-item nav-link active">Home</a>
+					<a href="{% url 'BloodProject:service' %}" class="nav-item nav-link ">Services & Plan</a>
+					<a href="{% url 'BloodProject:appointment' %}" class="nav-item nav-link">Appointment</a>
+                    <a href="{% url 'BloodProject:blog' %}" class="nav-item nav-link">Blog</a>
+                    <a href="{% url 'BloodProject:about' %}" class="nav-item nav-link">About Us</a>
+
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome {{request.user}}
+          </a>
+          <div class="dropdwon-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+                    </li>
+                    </ul>
+
+                    {% else %}
+
+                    <a href="{% url 'BloodProject:login' %}" class="nav-item nav-link">login</a>
+					<a href="{% url 'BloodProject:signup' %}" class="nav-item nav-link">sign up</a>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </nav>
+    </div>
+<div class="responsive-container-block bigContainer">
+        <div class="responsive-container-block Container">
+          <h1 class="display-4 m-0"><span class="text-primary">About</span> Us</h1>
+          <p class="text-blk subHeading">
+            "A well organised Blood Transfusion Service (BTS) is a vital component of any health care delivery system. An integrated strategy for Blood Safety is required for elimination of transfusion transmitted infections and for provision of safe and adequate blood transfusion services to the people."
+          </p>
+          <div class="social-icons-container">
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb33.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb34.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb35.png">
+            </a>
+            <a class="social-icon">
+              <img class="socialIcon image-block" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/bb36.png">
+            </a>
+          </div>
+        </div>
+      </div>
+	<header>
+		<nav>
+			<p><div class="logo"><marquee>Rakt setu</marquee></div>
+			<ul class="nav-links">
+
+			</ul>
+		</nav>
+	</header>
+
+
+
+	<section class="team">
+		<h1 class="display-4 m-0"><span class="text-primary">Meet </span><span class="text-secondary">Our </span>Team </h1>
+		<div class="team-cards">
+			<!-- Cards here -->
+			<!-- Card 1 -->
+			<div class="card">
+				<div class="card-img">
+					<img src="{% static 'images/p.jpeg' %}"
+          alt="User 1">
+				  </div>
+				<div class="card-info">
+					<h2 class="card-name">PAYAL</h2>
+					<p class="card-role">WEB DESIGNER & DEVELOPER</p>
+					<p class="card-email">kumaripayal110@gmail.com</p>
+					<p><button class="button">Contact</button></p>
+				</div>
+			</div>
+
+			<!-- Card 2 -->
+			<div class="card">
+				<div class="card-img">
+					<img src="{% static 'images/mu.jpeg' %}"
+                     alt="User 2">
+				</div>
+				<div class="card-info">
+					<h2 class="card-name">MUSKAN</h2>
+					<p class="card-role">WEB DESIGNER & DEVELOPER</p>
+					<p class="card-email">saroj.muskan19@gmail.com</p>
+					<p><button class="button">Contact</button></p>
+				</div>
+			</div>
+            <!--card4 -->
+            <div class="card">
+				<div class="card-img">
+					<img src="{% static 'images/v.jpeg' %}"
+
+                    alt="User 2">
+				</div>
+				<div class="card-info">
+					<h2 class="card-name">VINITA</h2>
+					<p class="card-role">WEB DESIGNER & DEVELOPER</p>
+					<p class="card-email">Vinitarawat3002@gmail.com</p>
+					<p><button class="button">Contact</button></p>
+				</div>
+			</div>
+			<!-- Card 3 -->
+			<div class="card">
+				<div class="card-img">
+					<img src="{% static 'images/a.jpeg' %}"
+          alt="User 3">
+				</div>
+
+				<div class="card-info">
+					<h2 class="card-name">ANJU KUMARI</h2>
+					<p class="card-role">WEB DESIGNER & DEVELOPER</p>
+					<p class="card-email">anjukumari55632@gmail.com</p>
+					<p><button class="button">Contact</button></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<p>© 2023 GeeksforGeeks. All Rights Reserved.</p>
+	</footer>
+</body>
+
+</html>
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="icon" type="image/jpg" href="{% static 'images/logo.jpeg' %}" />
+    <title>Rakt Setu</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+	<link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css "/>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+ <style>
+
+        .card {
+            background-color: #FF7F50;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Rakt</span>Setu</h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="{% url 'BloodProject:index' %}" class="nav-item nav-link active">Home</a>
+					<a href="{% url 'BloodProject:service' %}" class="nav-item nav-link ">Services & Plan</a>
+					<a href="{% url 'BloodProject:appointment' %}" class="nav-item nav-link">Appointment</a>
+                    <a href="{% url 'BloodProject:blog' %}" class="nav-item nav-link">Blog</a>
+                    <a href="{% url 'BloodProject:about' %}" class="nav-item nav-link">About Us</a>
+
+                   {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome {{request.user}}
+          </a>
+          <div class="dropdwon-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+                    </li>
+                    </ul>
+
+                    {% else %}
+
+                    <a href="{% url 'BloodProject:login' %}" class="nav-item nav-link">login</a>
+					<a href="{% url 'BloodProject:signup' %}" class="nav-item nav-link">sign up</a>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </nav>
+    </div>
+<div class="container ">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li>{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+             <div class="row row-content align-text-center text-white ">
+	<div class="col-12 col-md-10 offset-sm-1">
+             <div class="col-12">
+                <div class="card card-body bg-dark " style="--bs-bg-opacity: .5;">
+
+
+<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title text-center">Sign up</h1>
+
+
+				</div>
+
+             <div class="row row-content align-text-center text-white ">
+	<div class="col-12 col-md-10 offset-sm-1">
+             <div class="col-12">
+                <div class="card card-body  " style="--bs-bg-opacity: .5;">
+
+    <form method="post">
+      {% csrf_token %}
+  		<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">First Name <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                             <input type="text" class="form-control" required id="fname" name="fname" placeholder="First Name">
+                        </div>
+                    </div>
+
+            	<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Last Name <strong class="text-warning">*</strong>
+
+                        </label>
+                        <div class="col-md-9">
+                           <input type="text" class="form-control" required  id=lname name="lname" placeholder="Last name">
+                        </div>
+                    </div>
+
+
+
+            	<div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Email  <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                           <input type="email" class="form-control" required id="email" name="email" placeholder="abc@xyz.com">
+                        </div>
+                    </div>
+
+
+
+    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Username <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                         <input type="text" class="form-control" required id="username" name="username" placeholder="Username">
+                            <p>  <small> Letters only.</small></p>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Password <strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" placeholder="Enter Password" id="password" name="password" required>
+                          <p>  <small> Use minimum 8 Characters with numericals. </small></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class=" col-md-3 col-form-label">Password Confirmation<strong class="text-warning">*</strong></label>
+                        <div class="col-md-9">
+                          <input type="password" class="form-control" placeholder="Enter Password" id="cpassword" name="cpassword" required>
+                           <p>  </p>
+                        </div>
+                    </div>
+
+                    <div class="form-group row ">
+                        <div class="offset-md-3 col-md-4">
+                            <input class="btn btn-block btn-success" type="submit" name="" value="Sign Up">
+                        </div>
+                    </div>
+    </form>
+
+
+<a class="offset-md-3" href="{% url 'BloodProject:login' %}">Already have an account.</a>
+
+                </div>
+             </div>
+    </div>
+             </div>
+                </div>
+             </div>
+    </div>
+             </div>
+</div>
+
+</div>
+  </body>
+</html>
+
+

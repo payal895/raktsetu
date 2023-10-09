@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rakt Setu</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="icon" type="image/jpg" href="{% static 'images/logo.jpeg' %}" />
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Rakt</span>Setu</h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="{% url 'BloodProject:index' %}" class="nav-item nav-link active">Home</a>
+					<a href="{% url 'BloodProject:service' %}" class="nav-item nav-link ">Services & Plan</a>
+					<a href="{% url 'BloodProject:appointment' %}" class="nav-item nav-link">Appointment</a>
+                    <a href="{% url 'BloodProject:blog' %}" class="nav-item nav-link">Blog</a>
+                    <a href="{% url 'BloodProject:about' %}" class="nav-item nav-link">About Us</a>
+
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome {{request.user}}
+          </a>
+          <div class="dropdwon-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+                    </li>
+                    </ul>
+
+                    {% else %}
+
+                    <a href="{% url 'BloodProject:login' %}" class="nav-item nav-link">login</a>
+					<a href="{% url 'BloodProject:signup' %}" class="nav-item nav-link">sign up</a>
+
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Pet Image Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="{% static 'images/bpic.jpg' %}" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+
+                            <h1 class="display-3 text-white mb-3">रक्त SETU</h1>
+                            <h5 class="text-white mb-3 d-none d-sm-block">"Blood donors are the bridge between despair and hope."</h5>
+                            <a href="{% url 'BloodProject:appointment' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Book Appointment</a>
+                            <a href="{% url 'BloodProject:blog' %}" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pet Image End -->
+
+    <!-- About Start -->
+    <div class="container py-5" id="about">
+        <div class="row py-5">
+            <div class="col-lg-7 pb-5 pb-lg-0 px-3 px-lg-5">
+                <h4 class="text-secondary mb-3">About Us</h4>
+                <h1 class="display-4 mb-4"><span class="text-primary">Rakt</span><span class="text-secondary">Setu</span></h1>
+                <h5 class="text-muted mb-3">"To bridge the gap between those in need and the life-saving gift of blood"</h5>
+                <p class="mb-4">our mission is twofold: to promote blood donation and provide vital medical services to those who require them. We firmly believe that access to safe blood and essential medical care is a fundamental right, and we are committed to making it a reality for all.             </p>
+                <ul class="list-inline">
+                    <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Best In Industry</h5></li>
+                    <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>Emergency Services</h5></li>
+                    <li><h5><i class="fa fa-check-double text-secondary mr-3"></i>24/7 Customer Support</h5></li>
+                </ul>
+                <a href="{% url 'BloodProject:about' %}" class="btn btn-lg btn-primary mt-3 px-4">Learn More</a>
+            </div>
+            <div class="col-lg-5">
+                <div class="row px-3">
+                    <div class="col-12 p-0">
+                        <img class="img-fluid w-100" src="{% static 'images/b1.jpg' %}" alt="">
+                    </div>
+                    <div class="col-6 p-0">
+                        <img class="img-fluid w-100" src="{% static 'images/b2.jpg' %}" alt="">
+                    </div>
+                    <div class="col-6 p-0">
+                        <img class="img-fluid w-100" src="{% static 'images/b3.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Features Start -->
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <img class="img-fluid w-100" src="{% static 'images/bloodpic.jpg' %}" alt="">
+            </div>
+            <div class="col-lg-7 py-5 py-lg-0 px-3 px-lg-5">
+
+                <h1 class="display-4 mb-4"><span class="text-primary">Joining Hands</span> for Change</h1>
+                <p class="mb-4">Join us on this life-saving journey. Explore the various ways you can get involved with Raktsetu, from donating blood to volunteering your time and expertise. Together, we can create a world where no one goes without the medical care and support they deserve.Thank you for being a part of Raktsetu. Together, we can create a world where every heartbeat counts, and every life is valued.</p>
+            </div>
+        </div>
+        <a href="{% url 'BloodProject:blog' %}" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Blog</a>
+    </div>
+    <!-- Features End -->
+
+
+      <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5" id="contact">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 mb-5">
+                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">रक्त</span>SETU</h1>
+                <p class="m-0">Donating blood is a selfless act that directly contributes to saving lives, supporting medical treatments, and ensuring the availability of a stable and sufficient blood supply for emergencies and medical procedures. It's a simple yet powerful way for individuals to make a positive impact on the health and well-being of their communities and society as a whole.</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Get In Touch</h5>
+                          <p><i class="fa fa-map-marker-alt mr-2"></i>NEW DELHI,INDIA</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+918929222023</p>
+                        <p><i class="fa fa-envelope mr-2"></i>Raktsetu111@gmail.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Popular Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-white mb-2" href="{% url 'BloodProject:service' %}"><i class="fa fa-angle-right mr-2"></i>Services</a>
+							<a class="text-white mb-2" href="{% url 'BloodProject:appointment' %}"><i class="fa fa-angle-right mr-2"></i>Appointment</a>
+				            <a class="text-white mb-2" href="{% url 'BloodProject:blog' %}"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+						    <a class="text-white mb-2" href="{% url 'BloodProject:about' %}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+
+							<a class="text-white mb-2" href="{% url 'BloodProject:login' %}"><i class="fa fa-angle-right mr-2"></i>login</a>
+                            <a class="text-white mb-2" href="{% url 'BloodProject:signup' %}"><i class="fa fa-angle-right mr-2"></i>Signup</a>
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">FEEDBACK</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-2" placeholder="Feedback" required="required" />
+                            </div>
+                            <div>
+                                <button onclick="showAlert()"class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold">2023</a>. All Rights Reserved. Designed by
+                    <a class="text-white font-weight-bold">Raktsetu</a>
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="contact.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

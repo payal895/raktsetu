@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rakt Setu</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="icon" type="image/jpg" href="{% static 'images/logo.jpeg' %}" />
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Rakt</span>Setu</h1>
+            </a>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href="{% url 'BloodProject:index' %}" class="nav-item nav-link active">Home</a>
+					<a href="{% url 'BloodProject:service' %}" class="nav-item nav-link ">Services & Plan</a>
+					<a href="{% url 'BloodProject:appointment' %}" class="nav-item nav-link">Appointment</a>
+                    <a href="{% url 'BloodProject:blog' %}" class="nav-item nav-link">Blog</a>
+                    <a href="{% url 'BloodProject:about' %}" class="nav-item nav-link">About Us</a>
+
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Welcome {{request.user}}
+          </a>
+          <div class="dropdwon-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/logout">Logout</a>
+          </div>
+                    </li>
+                    </ul>
+
+                    {% else %}
+
+                    <a href="{% url 'BloodProject:login' %}" class="nav-item nav-link">login</a>
+					<a href="{% url 'BloodProject:signup' %}" class="nav-item nav-link">sign up</a>
+
+                    {% endif %}
+
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+   <!-- Services Start -->
+   <div class="container-fluid bg-light pt-5">
+    <div class="container py-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-secondary mb-3">Our Services</h4>
+            <h1 class="display-4 m-0"><span class="text-primary">Premium</span> Services</h1>
+        </div>
+        <div class="row pb-3">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-house display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">Blood Donation</h3>
+                    <p>"Blood is essential for transporting oxygen, nutrients, and other substances to tissues throughout the body. Donated blood can be lifesaving for individuals who have lost blood because of accidents or surgery, as well as for people who have become severely anemic or have dangerously low platelet counts because of certain medical conditions and/or treatments, such as chemotherapy to treat cancer. Screening measures help to maximize safety of blood donation for the donor and the recipient"</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-food display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">Organ Donation</h3>
+                    <p>" Organ donation is an opportunity to help others. People who are on an organ waiting list typically have end-stage organ disease that significantly impacts their quality of life and may be near the end of their life. Receiving an organ can become a life-changing event for these people. It can also help a family work through the grieving process and deal with their loss by knowing their loved one is helping save the lives of others."</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-grooming display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">Routine Health Test</h3>
+                    <p>"It has been observed that people of the working-age group (30-60 yrs) are at a high risk of lifestyle diseases. Unhealthy lifestyle changes, hereditary health diseases, and lack of sleep can cause many health problems ranging from minor to severe concerns. Getting a full-body check-up that includes tests for diabetes, cholesterol, Blood Pressure, heart disease can save your extra bucks in the long run."</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-cat display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">Sample collection</h3>
+                    <p>The specimens are collected by phlebotomist, technician, nurse or doctor after clinical examination and requisition of test. The specimen is then transported to the laboratory for further processing, storage and disposal as per protocol.</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-dog display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">Test Report</h3>
+                    <p>"Test results may help make a diagnosis in symptomatic patients (diagnostic testing) or identify occult disease in asymptomatic patients (screening). If the tests were appropriately ordered on the basis of the clinical presentation, any results should assist in ruling in or out possible diagnoses."</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="d-flex flex-column text-center bg-white mb-2 p-3 p-sm-5">
+                    <h3 class="flaticon-vaccine display-3 font-weight-normal text-secondary mb-3"></h3>
+                    <h3 class="mb-3">customer help </h3>
+                    <p>"Our lab provide all type support means our staff guied you how to fill the form as well as they will also help regarding any type of imformatin means related to test ,facilities for the patient who donate blood as well as organ"</p>
+                    <a class="text-uppercase font-weight-bold" href="">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Services End -->
+
+
+    <!-- Pricing Plan Start -->
+    <div class="container-fluid bg-light pt-5 pb-4">
+        <div class="container py-5">
+            <div class="d-flex flex-column text-center mb-5">
+                <h4 class="text-secondary mb-3">Pricing Plan</h4>
+                <h1 class="display-4 m-0">Choose the <span class="text-primary">Best Price</span></h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0">
+                        <div class="card-header position-relative border-0 p-0 mb-4">
+                            <img class="card-img-top" src="{% static 'images/st.png' %}" alt="">
+                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
+                                <h3 class="text-primary mb-3">Basic</h3>
+                                <h1 class="display-4 text-white mb-0">
+                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">Rs</small>699<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>GENERAL individual TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>THYROID & DIEBETIC TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>LIVER TEST + Common blood test (CBC)</li>
+                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>WHOLE BODY TEST</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 p-0">
+                            <a href="{% url 'BloodProject:signup' %}" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0">
+                        <div class="card-header position-relative border-0 p-0 mb-4">
+                            <img class="card-img-top" src="{% static 'images/sta.png' %}" alt="">
+                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
+                                <h3 class="text-secondary mb-3">Standard</h3>
+                                <h1 class="display-4 text-white mb-0">
+                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">Rs</small>1499<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>GENERAL individual TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>THYROID & DIEBETIC TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>LIVER TEST + Common blood test (CBC)</li>
+                                <li class="list-group-item p-2"><i class="fa fa-times text-danger mr-2"></i>WHOLE BODY TEST</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 p-0">
+                            <a href="{% url 'BloodProject:signup' %}" class="btn btn-secondary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card border-0">
+                        <div class="card-header position-relative border-0 p-0 mb-4">
+                            <img class="card-img-top" src="{% static 'images/pre.jpg' %}" alt="">
+                            <div class="position-absolute d-flex flex-column align-items-center justify-content-center w-100 h-100" style="top: 0; left: 0; z-index: 1; background: rgba(0, 0, 0, .5);">
+                                <h3 class="text-primary mb-3">Premium</h3>
+                                <h1 class="display-4 text-white mb-0">
+                                    <small class="align-top" style="font-size: 22px; line-height: 45px;">Rs</small>3000<small class="align-bottom" style="font-size: 16px; line-height: 40px;">/ Mo</small>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="card-body text-center p-0">
+                            <ul class="list-group list-group-flush mb-4">
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>GENERAL individual TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>THYROID & DIEBETIC TEST</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>LIVER TEST + Common blood test (CBC)</li>
+                                <li class="list-group-item p-2"><i class="fa fa-check text-secondary mr-2"></i>WHOLE BODY TEST</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer border-0 p-0">
+                            <a href="{% url 'BloodProject:signup' %}" class="btn btn-primary btn-block p-3" style="border-radius: 0;">Signup Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pricing Plan End -->
+
+
+
+
+
+  <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5" id="contact">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 mb-5">
+                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">रक्त</span>Setu</h1>
+                <p class="m-0">Donating blood is a selfless act that directly contributes to saving lives, supporting medical treatments, and ensuring the availability of a stable and sufficient blood supply for emergencies and medical procedures. It's a simple yet powerful way for individuals to make a positive impact on the health and well-being of their communities and society as a whole.</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Get In Touch</h5>
+                          <p><i class="fa fa-map-marker-alt mr-2"></i>NEW DELHI,INDIA</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+918929222023</p>
+                        <p><i class="fa fa-envelope mr-2"></i>Raktsetu111@gmail.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Popular Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-white mb-2" href="{% url 'BloodProject:service' %}"><i class="fa fa-angle-right mr-2"></i>Services</a>
+							<a class="text-white mb-2" href="{% url 'BloodProject:appointment' %}"><i class="fa fa-angle-right mr-2"></i>Appointment</a>
+				            <a class="text-white mb-2" href="{% url 'BloodProject:blog' %}"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+						    <a class="text-white mb-2" href="{% url 'BloodProject:about' %}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+							<a class="text-white mb-2" href="{% url 'BloodProject:login' %}"><i class="fa fa-angle-right mr-2"></i>login</a>
+                            <a class="text-white mb-2" href="{% url 'BloodProject:signup' %}"><i class="fa fa-angle-right mr-2"></i>Signup</a>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">FEEDBACK</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control border-2" placeholder="Feedback" required="required" />
+                            </div>
+                            <div>
+                                <button onclick="showAlert()"class="btn btn-lg btn-primary btn-block border-0" type="submit">Submit Now</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold">2023</a>. All Rights Reserved. Designed by
+                    <a class="text-white font-weight-bold">Vinita & Tushar</a>
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="contact.html">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
